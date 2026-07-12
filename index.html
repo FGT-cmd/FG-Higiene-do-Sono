@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D0D0D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Guia de Higiene do Sono FGT — o hábito que decide seus resultados enquanto você dorme.">
+<title>Higiene do Sono · FGT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0D0D; --surface:#151515; --surface2:#1B1B1B; --line:#292929;
+    --pink:#E91E90; --pink-soft:rgba(233,30,144,.12); --pink-line:rgba(233,30,144,.35);
+    --text:#F4F4F4; --muted:#9A9A9A; --muted2:#6C6C6C;
+    --green:#3ECf7f; --green-bg:rgba(62,207,127,.10); --green-line:rgba(62,207,127,.30);
+    --red:#F0616D; --red-bg:rgba(240,97,109,.09); --red-line:rgba(240,97,109,.28);
+    --r:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Manrope',system-ui,sans-serif; -webkit-font-smoothing:antialiased;
+    line-height:1.55; padding-bottom:64px;
+  }
+  a{color:inherit;text-decoration:none}
+  section{scroll-margin-top:150px}
+
+  /* ===== HEADER ===== */
+  header{position:sticky;top:0;z-index:30;background:rgba(13,13,13,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .head-inner{max-width:820px;margin:0 auto;padding:14px 20px 0}
+  .wordmark{display:flex;align-items:baseline;gap:8px}
+  .wordmark .fgt{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--pink);letter-spacing:.5px}
+  .wordmark .sub{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted2);font-weight:700}
+  h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.95rem;line-height:1.08;margin:12px 0 2px;letter-spacing:.3px}
+  .tagline{color:var(--muted);font-size:.88rem;margin-bottom:12px}
+  .nav{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{flex:0 0 auto;padding:6px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);font-size:.78rem;font-weight:600;white-space:nowrap;transition:all .18s}
+  .nav a:hover{color:var(--text)}
+  .nav a.active{background:var(--pink);border-color:var(--pink);color:#fff}
+
+  /* ===== LAYOUT ===== */
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);font-weight:800;margin:34px 0 6px}
+  h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:1.7rem;line-height:1.12;margin-bottom:14px}
+  h3{font-size:1.02rem;font-weight:800;margin:22px 0 8px;color:var(--text)}
+  p{font-size:.94rem;color:#dcdcdc;margin-bottom:12px}
+  p .b{color:var(--text);font-weight:700}
+  .lead{color:#cfcfcf}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin-bottom:14px}
+  ul.clean{list-style:none;margin:6px 0 12px}
+  ul.clean li{position:relative;padding:5px 0 5px 20px;font-size:.92rem;color:#dcdcdc}
+  ul.clean li::before{content:'';position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--pink)}
+  ul.clean li .b{color:var(--text);font-weight:700}
+
+  /* ===== BOXES ===== */
+  .box{border-radius:var(--r);padding:18px 20px;margin:14px 0}
+  .box .lab{font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;font-weight:800;margin-bottom:10px}
+  .box ol{margin:0;padding-left:20px}
+  .box ol li{font-size:.92rem;margin:7px 0;color:#e6e6e6}
+  .box ol li .b{color:#fff;font-weight:700}
+  .box ul{list-style:none;margin:0}
+  .box ul li{position:relative;padding:5px 0 5px 20px;font-size:.92rem;color:#e6e6e6}
+  .box ul li::before{content:'';position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%}
+  .box.pink{background:var(--pink-soft);border:1px solid var(--pink-line)}
+  .box.pink .lab{color:var(--pink)} .box.pink ul li::before{background:var(--pink)}
+  .box.blue{background:var(--surface2);border:1px solid var(--line)}
+  .box.blue .lab{color:#cfcfcf} .box.blue ul li::before{background:var(--muted)}
+  .box.green{background:var(--green-bg);border:1px solid var(--green-line)}
+  .box.green .lab{color:var(--green)} .box.green ul li::before{background:var(--green)}
+
+  /* ===== STATS ===== */
+  .stat{display:grid;grid-template-columns:82px 1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:10px}
+  .stat .n{background:var(--pink);color:#fff;font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center;padding:14px 6px;text-align:center}
+  .stat .d{background:var(--pink-soft);padding:12px 16px;font-size:.88rem;color:#e6e6e6;display:flex;align-items:center}
+
+  /* triângulo */
+  .tri{display:grid;grid-template-columns:1fr;gap:8px;margin:6px 0 4px}
+  .tri .row{display:flex;gap:10px;align-items:baseline;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:11px 14px}
+  .tri .k{font-weight:800;color:var(--pink);font-size:.9rem;min-width:78px}
+  .tri .v{font-size:.88rem;color:#dcdcdc}
+
+  /* ===== TIMELINE ===== */
+  .tl-item{display:grid;grid-template-columns:94px 1fr;gap:14px;align-items:start;padding:15px 0;border-bottom:1px solid var(--line)}
+  .tl-item:last-child{border-bottom:none}
+  .tl-phase{background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:9px 5px;text-align:center;font-size:.6rem;font-weight:800;letter-spacing:.05em;color:#cfcfcf}
+  .tl-body h4{font-size:.98rem;color:var(--pink);margin-bottom:3px;font-weight:700}
+  .tl-body p{font-size:.88rem;color:#d4d4d4;margin:0}
+
+  /* ===== TABLE ===== */
+  .tbl{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.86rem}
+  .tbl th{background:var(--pink);color:#fff;text-align:left;padding:11px 13px;font-weight:700;font-size:.78rem}
+  .tbl td{padding:11px 13px;border-top:1px solid var(--line);color:#dcdcdc;vertical-align:top}
+  .tbl td:first-child{font-weight:700;color:var(--text)}
+  .tbl tr:nth-child(even) td{background:rgba(255,255,255,.015)}
+
+  /* ===== DO / AVOID ===== */
+  .da{display:grid;grid-template-columns:1fr;gap:12px;margin:6px 0}
+  .da .col{border-radius:var(--r);padding:16px 18px}
+  .da .col.do{background:var(--green-bg);border:1px solid var(--green-line)}
+  .da .col.no{background:var(--red-bg);border:1px solid var(--red-line)}
+  .da h4{font-size:.9rem;margin-bottom:10px;letter-spacing:.02em}
+  .da .col.do h4{color:var(--green)} .da .col.no h4{color:var(--red)}
+  .da ul{list-style:none}
+  .da li{position:relative;padding:5px 0 5px 22px;font-size:.86rem;color:#dcdcdc}
+  .da li::before{position:absolute;left:0;top:4px;font-weight:800;font-size:.8rem}
+  .da .col.do li::before{content:'✓';color:var(--green)}
+  .da .col.no li::before{content:'✕';color:var(--red)}
+
+  /* ===== TRACKER ===== */
+  .tracker-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tracker{display:grid;grid-template-columns:minmax(150px,1fr) repeat(7,34px);gap:5px;min-width:420px}
+  .tk-head{font-size:.64rem;font-weight:800;color:var(--muted2);text-align:center;padding:4px 0;letter-spacing:.03em}
+  .tk-head.lbl{text-align:left}
+  .tk-hab{font-size:.8rem;color:#dcdcdc;display:flex;align-items:center;padding:6px 4px 6px 0;line-height:1.3}
+  .tk-cell{aspect-ratio:1;border:1px solid var(--line);border-radius:7px;background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:transparent;transition:all .14s;padding:0}
+  .tk-cell:hover{border-color:var(--pink-line)}
+  .tk-cell.on{background:var(--pink);border-color:var(--pink);color:#fff}
+  .tk-actions{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:12px;flex-wrap:wrap}
+  .tk-count{font-size:.82rem;color:var(--muted)}
+  .tk-count b{color:var(--pink)}
+  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:9px;padding:8px 14px;font-family:inherit;font-weight:700;font-size:.8rem;cursor:pointer;transition:all .16s}
+  .btn-ghost:hover{color:var(--text);border-color:#3a3a3a}
+
+  /* ===== CHECKLIST (autodiagnóstico) ===== */
+  .check-item{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--surface2);margin-bottom:8px;cursor:pointer;transition:all .14s}
+  .check-item:hover{border-color:#3a3a3a}
+  .check-item.on{border-color:var(--pink-line);background:var(--pink-soft)}
+  .check-box{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--muted2);margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;transition:all .14s}
+  .check-item.on .check-box{background:var(--pink);border-color:var(--pink)}
+  .check-txt{font-size:.9rem;color:#dcdcdc}
+  .result{margin-top:16px;border-radius:var(--r);padding:18px 20px;border:1px solid var(--line);background:var(--surface2)}
+  .result .score{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--pink);margin-bottom:6px}
+  .result .msg{font-size:.92rem;color:#e6e6e6}
+
+  /* ===== BREATHING ===== */
+  .breath{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 6px}
+  .breath-stage{width:200px;height:200px;display:flex;align-items:center;justify-content:center;position:relative;margin:8px 0 18px}
+  .breath-circle{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 50% 40%, rgba(233,30,144,.5), rgba(233,30,144,.12));border:2px solid var(--pink-line);display:flex;align-items:center;justify-content:center;transform:scale(1);transition:transform 0ms linear}
+  .breath-num{font-family:'DM Serif Display',serif;font-size:2rem;color:#fff}
+  .breath-label{font-size:1.05rem;font-weight:700;color:var(--pink);min-height:1.4em;letter-spacing:.02em}
+  .breath-hint{font-size:.84rem;color:var(--muted);margin:4px 0 16px}
+  .btn-pink{background:var(--pink);border:none;color:#fff;border-radius:11px;padding:12px 26px;font-family:inherit;font-weight:800;font-size:.92rem;cursor:pointer;transition:filter .16s}
+  .btn-pink:hover{filter:brightness(1.08)}
+
+  footer{max-width:820px;margin:40px auto 0;padding:24px 20px;border-top:1px solid var(--line);color:var(--muted2);font-size:.78rem;text-align:center;line-height:1.7}
+  footer .dis{color:var(--muted);margin-bottom:8px}
+  footer a{color:var(--pink);font-weight:700}
+
+  @media(min-width:680px){
+    h1{font-size:2.3rem}
+    .tri{grid-template-columns:1fr}
+    .da{grid-template-columns:1fr 1fr}
+  }
+  @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <div class="wordmark"><span class="fgt">FGT</span><span class="sub">Assessoria Fitness</span></div>
+    <h1>Higiene do Sono</h1>
+    <p class="tagline">O hábito que decide seus resultados enquanto você dorme.</p>
+    <nav class="nav" id="nav">
+      <a href="#comece">Comece aqui</a>
+      <a href="#porque">Por que importa</a>
+      <a href="#dia">Seu dia</a>
+      <a href="#ref">Referência</a>
+      <a href="#pilares">Os pilares</a>
+      <a href="#filhos">Filhos pequenos</a>
+      <a href="#tempo">Sem tempo</a>
+      <a href="#tracker">Tracker</a>
+      <a href="#diagnostico">Seu sono</a>
+      <a href="#respiracao">Respiração</a>
+      <a href="#resumo">Resumo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- COMECE -->
+  <section id="comece">
+    <p class="eyebrow">Comece por aqui</p>
+    <h2>Se você só fizer 3 coisas, faça estas</h2>
+    <p class="lead">Esse guia é completo, mas eu não quero que você mude tudo de uma vez — isso não funciona e só frustra. Então vamos direto ao ponto. Esses três ajustes sozinhos já mudam muito:</p>
+    <div class="box pink">
+      <div class="lab">Os 3 ajustes de maior impacto</div>
+      <ol>
+        <li><span class="b">Acorde no mesmo horário todo dia.</span> Inclusive fim de semana. É o que mais regula o seu sono.</li>
+        <li><span class="b">Pegue luz natural nos primeiros minutos do dia.</span> Abra a cortina, tome o café perto da janela. 10 minutos bastam.</li>
+        <li><span class="b">Corte a cafeína depois das 14h e as telas 30 min antes de dormir.</span> Dois cortes simples, impacto direto.</li>
+      </ol>
+    </div>
+    <p>O resto aprofunda o porquê, mostra a rotina ideal do dia inteiro e tem ferramentas pra você acompanhar. Mas se hoje você só levar esses três, já saiu no lucro.</p>
+  </section>
+
+  <!-- POR QUE -->
+  <section id="porque">
+    <p class="eyebrow">Parte 1</p>
+    <h2>Por que o sono decide seus resultados</h2>
+    <p>Vou ser direto: se o seu sono está ruim, você treina com o freio de mão puxado. Não importa o quão perfeito estejam o treino e a dieta.</p>
+    <h3>O triângulo que você não pode quebrar</h3>
+    <p>Seus resultados dependem de três coisas trabalhando juntas. Tira uma, as outras duas param de funcionar direito:</p>
+    <div class="tri">
+      <div class="row"><span class="k">Treino</span><span class="v">gera o estímulo e as microlesões que pedem adaptação</span></div>
+      <div class="row"><span class="k">Nutrição</span><span class="v">fornece o material pra reconstruir</span></div>
+      <div class="row"><span class="k">Sono</span><span class="v">é o momento em que a reconstrução realmente acontece</span></div>
+    </div>
+    <p>A síntese proteica — que faz o músculo crescer — acontece principalmente no sono profundo, quando o hormônio do crescimento tem seu pico. Sem sono, o estímulo existe, mas a resposta não vem completa.</p>
+    <h3>Os números que provam isso</h3>
+    <div class="stat"><div class="n">18%</div><div class="d">de queda na síntese proteica muscular após uma única noite mal dormida.</div></div>
+    <div class="stat"><div class="n">24%</div><div class="d">de redução na testosterona — hormônio-chave de composição corporal pra homens e mulheres.</div></div>
+    <div class="stat"><div class="n">21%</div><div class="d">de aumento no cortisol, que acelera a perda de massa magra e o acúmulo de gordura abdominal.</div></div>
+    <div class="stat"><div class="n">7-9h</div><div class="d">é a faixa recomendada pra adultos. Isso não é negociável biologicamente.</div></div>
+    <h3>Dormir mal engorda. E não é falta de disciplina.</h3>
+    <p>A privação de sono mexe com dois hormônios da fome: <span class="b">a leptina cai</span> (some o sinal de saciedade) e <span class="b">a grelina sobe</span> (a fome aumenta, principalmente por doce e coisa gordurosa). Somado ao cortisol alto, o corpo estoca mais gordura. Se o emagrecimento travou e o sono está ruim, o problema pode não ser sua força de vontade. É bioquímica — e dá pra resolver.</p>
+  </section>
+
+  <!-- SEU DIA -->
+  <section id="dia">
+    <p class="eyebrow">Parte 2</p>
+    <h2>O seu dia para dormir bem</h2>
+    <p>Dormir bem começa quando você acorda, não quando você deita. Essa é a rotina ideal do dia inteiro — use como mapa e vá encaixando o que der.</p>
+    <div class="card" style="padding:6px 20px">
+      <div class="tl-item"><div class="tl-phase">AO ACORDAR</div><div class="tl-body"><h4>Luz natural nos olhos</h4><p>Abra a cortina ou tome o café perto da janela por 10 minutos. Isso liga o seu relógio biológico.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">MANHÃ</div><div class="tl-body"><h4>Movimento e mais luz</h4><p>Se puder treinar de manhã ou início da tarde, melhor. Quanto mais luz natural no dia, mais forte o sinal de sono à noite.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">ATÉ 14H</div><div class="tl-body"><h4>Último café</h4><p>Depois disso, só descafeinado ou chás sem cafeína. A cafeína fica ativa por 6 a 8 horas.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">FIM DE TARDE</div><div class="tl-body"><h4>Cuidado com treino muito tarde</h4><p>Treino intenso eleva temperatura e cortisol. Se treinar à noite, termine pelo menos 1 a 2 horas antes de deitar.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">2H ANTES</div><div class="tl-body"><h4>Última refeição pesada</h4><p>Digestão pesada atrapalha o sono profundo. Depois disso, só algo leve se precisar.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">1H ANTES</div><div class="tl-body"><h4>Diminua as luzes</h4><p>Abaixe a iluminação da casa e ative o modo de luz quente no celular. Comece a desacelerar.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">30 MIN ANTES</div><div class="tl-body"><h4>Telas desligadas</h4><p>Guarde o celular, de preferência fora do quarto. Banho morno, leitura, respiração — escolha o seu ritual.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">NA CAMA</div><div class="tl-body"><h4>Só para dormir</h4><p>Quarto escuro, fresco (18-22°C) e silencioso. Se o sono não vier, tente a respiração 4-7-8.</p></div></div>
+    </div>
+  </section>
+
+  <!-- REFERÊNCIA -->
+  <section id="ref">
+    <p class="eyebrow">Parte 3</p>
+    <h2>Referência rápida</h2>
+    <h3>Quando parar cada coisa antes de dormir</h3>
+    <table class="tbl">
+      <thead><tr><th>O quê</th><th>Parar até</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td>Cafeína</td><td>6 a 8h antes</td><td>Fica ativa por horas e reduz o sono profundo</td></tr>
+        <tr><td>Treino intenso</td><td>1 a 2h antes</td><td>Eleva temperatura corporal e cortisol</td></tr>
+        <tr><td>Refeição pesada</td><td>2 a 3h antes</td><td>Digestão atrapalha o sono profundo</td></tr>
+        <tr><td>Álcool</td><td>3 a 4h antes</td><td>Ajuda a apagar, mas fragmenta o sono</td></tr>
+        <tr><td>Telas / luz azul</td><td>30 a 60 min antes</td><td>Suprime a melatonina, o hormônio do sono</td></tr>
+        <tr><td>Luz forte em casa</td><td>1h antes</td><td>Atrasa o relógio biológico</td></tr>
+      </tbody>
+    </table>
+    <h3>O resumo em duas colunas</h3>
+    <div class="da">
+      <div class="col do">
+        <h4>FAÇA ISSO</h4>
+        <ul>
+          <li>Acordar no mesmo horário todo dia</li>
+          <li>Pegar luz natural pela manhã</li>
+          <li>Quarto escuro, fresco e silencioso</li>
+          <li>Modo de luz quente no celular à noite</li>
+          <li>Ter um ritual de desaceleração</li>
+          <li>Usar a cama só para dormir</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h4>EVITE ISSO</h4>
+        <ul>
+          <li>Variar muito o horário de dormir</li>
+          <li>Tomar café à tarde/noite</li>
+          <li>Treino intenso perto de deitar</li>
+          <li>Levar telas para a cama</li>
+          <li>Cochilar depois das 15h</li>
+          <li>Olhar o relógio de madrugada</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section id="pilares">
+    <p class="eyebrow">Parte 4</p>
+    <h2>Os pilares, explicados</h2>
+
+    <h3>1. Consistência de horário — o pilar nº 1</h3>
+    <p>O ajuste de maior impacto isolado. O corpo ama previsibilidade. Quando os horários variam muito, o relógio biológico fica confuso e o sono perde qualidade mesmo que a quantidade seja a mesma. <span class="b">Fixe o horário de acordar</span> e o de dormir se ajusta sozinho.</p>
+
+    <h3>2. Gestão da luz — seu maior aliado (e vilão)</h3>
+    <ul class="clean">
+      <li><span class="b">De manhã:</span> luz natural nos olhos ancora o ciclo e melhora foco e humor no dia.</li>
+      <li><span class="b">À noite:</span> menos luz artificial e menos luz azul de telas. A luz azul imita o meio-dia pro cérebro e trava a melatonina.</li>
+    </ul>
+
+    <h3>Como usar o modo de luz quente do celular</h3>
+    <p>Largar o celular 2h antes soa lindo na teoria e é difícil na prática. Então vamos pelo que dá pra fazer já: ativar o modo de luz quente. Todo celular atual tem — ele deixa a tela amarelada e reduz bastante a luz azul que atrapalha o sono.</p>
+    <p class="b" style="margin-bottom:6px">Como ativar (em qualquer aparelho):</p>
+    <p style="margin-bottom:8px">Vá em <span class="b">Configurações → Tela (ou Display) → Conforto visual / Bem-estar digital</span> e procure por um destes nomes:</p>
+    <ul class="clean">
+      <li>"Night Shift", "Modo Noite", "Filtro de Luz Azul", "Luz Noturna", "Conforto Visual" ou "Temperatura de Cor".</li>
+    </ul>
+    <div class="box green">
+      <div class="lab">Configuração ideal — faça uma vez e esquece</div>
+      <ul>
+        <li>Ative com agendamento automático: do pôr do sol ao nascer do sol</li>
+        <li>Deixe a intensidade no máximo — quanto mais amarelada, melhor</li>
+        <li>Combine com o modo escuro do celular</li>
+        <li>Abaixe também o brilho geral à noite</li>
+      </ul>
+    </div>
+    <p>Honestidade: o filtro reduz a luz azul, mas não elimina o estímulo mental das redes nem as notificações. Ele é uma camada de proteção, não um passe livre. O ideal continua sendo tela desligada 30 min antes de dormir.</p>
+    <div class="box blue">
+      <div class="lab">Outros recursos que você já tem no celular</div>
+      <ul>
+        <li>"Não perturbe" agendado: silencia notificações no horário de sono</li>
+        <li>Limite de uso por app: bloqueia redes depois de um horário</li>
+        <li>Tela em escala de cinza (em Acessibilidade): tira as cores e reduz a vontade de rolar o feed</li>
+      </ul>
+    </div>
+
+    <h3>3. Ambiente de sono</h3>
+    <ul class="clean">
+      <li><span class="b">Temperatura:</span> 18 a 22°C. O corpo esfria pra adormecer; quarto quente atrapalha.</li>
+      <li><span class="b">Escuridão:</span> cortina blackout ou máscara de dormir.</li>
+      <li><span class="b">Silêncio:</span> ruído branco ou ventilador ajudam a mascarar sons.</li>
+      <li><span class="b">Associação:</span> cama é pra dormir (e sexo). Trabalhar e ver série na cama confunde o cérebro.</li>
+    </ul>
+
+    <h3>4. Cafeína</h3>
+    <p>Meia-vida de 6 a 8 horas. Um café às 15h ainda age às 21h. Evite pelo menos 6h antes de dormir — inclui café, chá preto, mate, pré-treino e refrigerante.</p>
+
+    <h3>5. Exercício</h3>
+    <p>Treinar melhora muito o sono. Só cuide do horário: treino intenso 1 a 2h antes de dormir eleva temperatura e cortisol. Prefira manhã ou início da tarde quando possível.</p>
+
+    <h3>6. Ritual de desaceleração</h3>
+    <p>O sistema nervoso não tem botão de desligar. Crie uma sequência curta e sempre igual: banho morno, leitura (não tela), respiração ou alongamento leve, anotar o que precisa fazer amanhã. A respiração <span class="b">4-7-8</span> logo ali embaixo é um bom começo.</p>
+  </section>
+
+  <!-- FILHOS -->
+  <section id="filhos">
+    <p class="eyebrow">Parte 5</p>
+    <h2>Para quem tem filhos pequenos</h2>
+    <p>Se você tem bebê ou criança pequena em casa, eu sei que não adianta falar em "horário fixo" pra quem acorda 3 vezes por noite. A realidade é dura e não vou fingir o contrário. Mas isso não significa que você não pode fazer nada — significa que a estratégia muda.</p>
+    <p>Uma meta-análise achou perda média de 43 min de sono por noite nas primeiras 16 semanas após o nascimento. O impacto maior é na qualidade: o sono fragmentado corta o sono profundo, onde acontece a recuperação física e hormonal. Não é frescura nem preguiça.</p>
+    <div class="box pink">
+      <div class="lab">Foque no que está sob o seu controle</div>
+      <ul>
+        <li>Mantenha o horário de acordar o mais fixo possível — ancora o ciclo mesmo com noites picadas</li>
+        <li>Pegue luz natural de manhã, nem que seja perto da janela</li>
+        <li>Capriche na qualidade dos períodos que consegue dormir: escuro, fresco, silencioso</li>
+        <li>Peça ajuda e divida as noites. Isso é estratégia, não fraqueza.</li>
+      </ul>
+    </div>
+    <h3>O cochilo certo (quando dá)</h3>
+    <p>Cochilo de 20 a 30 min no início da tarde recupera parte da função cognitiva. Só não pode ser depois das 15h. Uma boa técnica é o "nap café": tome um café, deite 20 min e acorde com a cafeína no pico do efeito.</p>
+    <h3>Para adormecer rápido quando a janela aparece</h3>
+    <p>Às vezes o sono aparece e o corpo está agitado demais. O relaxamento muscular progressivo ajuda: vá contraindo e soltando os músculos progressivamente, dos pés à cabeça. Reduz a tensão e aumenta o sono profundo — funciona em 20 minutos, sem silêncio absoluto.</p>
+    <div class="box blue">
+      <div class="lab">Uma coisa importante</div>
+      <ul>
+        <li>Privação de sono crônica pode intensificar ansiedade e alterações de humor nesse período</li>
+        <li>Se o impacto no dia a dia estiver grande, procurar apoio profissional é parte do cuidado — não exceção</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SEM TEMPO -->
+  <section id="tempo">
+    <p class="eyebrow">Parte 6</p>
+    <h2>Para quem vive no 'não tenho tempo'</h2>
+    <p>Se você acha que dorme 5 ou 6 horas e funciona bem, deixa eu te dizer com carinho: provavelmente você se acostumou com a privação e perdeu a referência de como é funcionar de verdade. A privação crônica engana a própria percepção — reflexos, memória e humor rodam abaixo do normal sem você notar.</p>
+    <p><span class="b">Dormir menos não te dá mais tempo, te dá menos resultado.</span> A produtividade por hora cai: 8 horas de trabalho com sono ruim rendem menos que 6 horas bem dormidas.</p>
+    <div class="box pink">
+      <div class="lab">5 ajustes de alto retorno</div>
+      <ol>
+        <li><span class="b">Fixe o horário de acordar.</span> É a âncora de tudo. Mesmo horário, não importa a que horas dormiu.</li>
+        <li><span class="b">Celular fora da cama.</span> Comece com 30 min antes. Deixe carregando fora do quarto.</li>
+        <li><span class="b">Trate o sono como compromisso agendado.</span> Quando der a hora, leve a sério como uma reunião.</li>
+        <li><span class="b">Ajuste o ambiente uma vez.</span> Escuro, fresco, silencioso — rende toda noite.</li>
+        <li><span class="b">Cafeína só até as 14h.</span> Corte simples, impacto direto.</li>
+      </ol>
+    </div>
+    <p>Tratar o sono como parte do seu protocolo de performance muda tudo. Você não performa apesar do descanso — você performa por causa dele.</p>
+  </section>
+
+  <!-- TRACKER -->
+  <section id="tracker">
+    <p class="eyebrow">Parte 7 · interativo</p>
+    <h2>Seu tracker de 7 dias</h2>
+    <p>Aqui a teoria vira hábito. Toque nos dias que você cumprir cada hábito — <span class="b">o app salva no seu aparelho</span>, então pode fechar e voltar depois. Não tente todos de uma vez: comece com 3 ou 4 e vá somando.</p>
+    <div class="card">
+      <div class="tracker-wrap"><div class="tracker" id="trackerGrid"></div></div>
+      <div class="tk-actions">
+        <span class="tk-count" id="tkCount"></span>
+        <button class="btn-ghost" id="tkReset">Zerar semana</button>
+      </div>
+    </div>
+    <div class="box green">
+      <div class="lab">Como ler no fim da semana</div>
+      <ul>
+        <li>5 a 7 marcações num hábito: já virou rotina, mantém</li>
+        <li>2 a 4: está no caminho, foca nele na próxima semana</li>
+        <li>0 a 1: identifica o que travou e ajusta a meta pra algo mais fácil</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section id="diagnostico">
+    <p class="eyebrow">Parte 8 · interativo</p>
+    <h2>Como está o seu sono?</h2>
+    <p>Marque quantos desses sinais você reconhece em você nas últimas semanas. É um raio-x rápido e honesto:</p>
+    <div id="checklist"></div>
+    <div class="result" id="result">
+      <div class="score" id="resScore">0 de 8 marcados</div>
+      <div class="msg" id="resMsg">Marque os sinais acima pra ver o resultado.</div>
+    </div>
+  </section>
+
+  <!-- RESPIRAÇÃO -->
+  <section id="respiracao">
+    <p class="eyebrow">Ferramenta · respiração</p>
+    <h2>Respiração 4-7-8 pra dormir</h2>
+    <p>Quando o sono não vem, essa técnica desacelera o sistema nervoso e ajuda a pegar no sono. Inspire por 4, segure por 7, expire por 8. Siga o círculo:</p>
+    <div class="card">
+      <div class="breath">
+        <div class="breath-stage"><div class="breath-circle" id="bCircle"><span class="breath-num" id="bNum"></span></div></div>
+        <div class="breath-label" id="bLabel">Pronto quando você estiver</div>
+        <div class="breath-hint" id="bHint">3 ciclos já acalmam. Respire pelo nariz, solte pela boca.</div>
+        <button class="btn-pink" id="bBtn">Começar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUMO -->
+  <section id="resumo">
+    <p class="eyebrow">Parte 9</p>
+    <h2>O resumo de tudo</h2>
+    <div class="box pink">
+      <div class="lab">O essencial em 6 frases</div>
+      <ul>
+        <li>Sono não é descanso passivo — é onde os resultados são construídos.</li>
+        <li>O que mais funciona é comportamento: horário fixo, luz certa, ambiente adequado.</li>
+        <li>Luz natural de manhã e escuro à noite regulam quase todo o resto.</li>
+        <li>Cafeína até as 14h, telas fora da cama, quarto fresco e escuro.</li>
+        <li>Nenhum suplemento, treino ou dieta substitui uma boa noite de sono.</li>
+        <li>Comece com 2 ou 3 hábitos e mantenha por 14 dias. Consistência bate perfeição.</li>
+      </ul>
+    </div>
+    <p>Sono bem feito é a alavanca mais barata e poderosa que você tem. Escolhe seus primeiros hábitos, coloca no tracker e me conta como foi a sua semana.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p class="dis">Material educativo. Não substitui avaliação médica. Se você convive com insônia persistente ou sofrimento emocional, procure um profissional de saúde.</p>
+  <p>FGT Assessoria Fitness · <a href="https://instagram.com/fernandogomess__" target="_blank" rel="noopener">@fernandogomess__</a></p>
+</footer>
+
+<script>
+/* ===== SCROLLSPY NAV ===== */
+const navLinks = [...document.querySelectorAll('.nav a')];
+const secs = navLinks.map(a=>document.querySelector(a.getAttribute('href')));
+const spy = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id='#'+e.target.id;
+      navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href')===id));
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+
+/* ===== TRACKER (localStorage) ===== */
+const HABITS = [
+  'Acordei no horário fixo',
+  'Peguei luz natural de manhã',
+  'Sem cafeína depois das 14h',
+  'Luz quente / larguei a tela antes de dormir',
+  'Quarto escuro e fresco (18-22°C)',
+  'Fiz meu ritual de desaceleração',
+  'Dormi entre 7 e 9 horas'
+];
+const DAYS = ['S','T','Q','Q','S','S','D'];
+const TK_KEY = 'fgt_sono_tracker_v1';
+let tkState = {};
+try{ tkState = JSON.parse(localStorage.getItem(TK_KEY) || '{}'); }catch(e){ tkState = {}; }
+
+function tkSave(){ try{ localStorage.setItem(TK_KEY, JSON.stringify(tkState)); }catch(e){} }
+function tkCount(){
+  const n = Object.values(tkState).filter(Boolean).length;
+  document.getElementById('tkCount').innerHTML = '<b>'+n+'</b> de 49 marcações nesta semana';
+}
+function renderTracker(){
+  const g = document.getElementById('trackerGrid');
+  let html = '<div class="tk-head lbl">Hábito</div>';
+  DAYS.forEach(d=> html += '<div class="tk-head">'+d+'</div>');
+  HABITS.forEach((h,hi)=>{
+    html += '<div class="tk-hab">'+h+'</div>';
+    for(let d=0; d<7; d++){
+      const k = hi+'-'+d;
+      html += '<button class="tk-cell'+(tkState[k]?' on':'')+'" data-k="'+k+'" aria-label="'+h+' dia '+(d+1)+'">✓</button>';
+    }
+  });
+  g.innerHTML = html;
+  g.querySelectorAll('.tk-cell').forEach(c=>{
+    c.addEventListener('click',()=>{
+      const k=c.dataset.k;
+      tkState[k]=!tkState[k];
+      c.classList.toggle('on',tkState[k]);
+      tkSave(); tkCount();
+    });
+  });
+  tkCount();
+}
+document.getElementById('tkReset').addEventListener('click',()=>{
+  tkState={}; tkSave(); renderTracker();
+});
+renderTracker();
+
+/* ===== AUTODIAGNÓSTICO ===== */
+const SIGNS = [
+  'Meu desempenho no treino caiu sem eu ter mudado nada',
+  'Sinto dores musculares por mais de 48h depois de treinos normais',
+  'Estou com mais fome e vontade de doce/carboidrato',
+  'Ando irritado, disperso ou de humor oscilante',
+  'Não tenho motivação pra treinar mesmo com a agenda livre',
+  'Meu peso empacou ou subiu mesmo controlando a dieta',
+  'Acordo cansado mesmo dormindo o que considero suficiente',
+  'Demoro muito pra pegar no sono ou acordo várias vezes'
+];
+const checked = new Array(SIGNS.length).fill(false);
+const cl = document.getElementById('checklist');
+cl.innerHTML = SIGNS.map((s,i)=>
+  '<div class="check-item" data-i="'+i+'"><div class="check-box">✓</div><div class="check-txt">'+s+'</div></div>'
+).join('');
+function updateResult(){
+  const n = checked.filter(Boolean).length;
+  const score = document.getElementById('resScore');
+  const msg = document.getElementById('resMsg');
+  score.textContent = n+' de 8 marcados';
+  if(n===0){ msg.textContent = 'Marque os sinais acima pra ver o resultado.'; }
+  else if(n<=1){ msg.textContent = 'Seu sono provavelmente está te ajudando. Mantém o que você já faz.'; }
+  else if(n<=3){ msg.textContent = 'Sinal de alerta. Comece pelos 3 ajustes do topo do guia e acompanhe pelo tracker.'; }
+  else { msg.innerHTML = 'O sono é a sua prioridade agora — antes de qualquer ajuste de treino ou dieta. Me chama pra gente ver isso junto.'; }
+}
+cl.querySelectorAll('.check-item').forEach(it=>{
+  it.addEventListener('click',()=>{
+    const i=+it.dataset.i;
+    checked[i]=!checked[i];
+    it.classList.toggle('on',checked[i]);
+    updateResult();
+  });
+});
+
+/* ===== RESPIRAÇÃO 4-7-8 ===== */
+const PHASES=[
+  {label:'Inspire', dur:4, scale:1.55},
+  {label:'Segure',  dur:7, scale:1.55},
+  {label:'Expire',  dur:8, scale:1.0},
+];
+let breathing=false, tId=null, cId=null;
+const circle=document.getElementById('bCircle');
+const bNum=document.getElementById('bNum');
+const bLabel=document.getElementById('bLabel');
+const bHint=document.getElementById('bHint');
+const bBtn=document.getElementById('bBtn');
+let cycles=0;
+
+function runPhase(idx){
+  if(!breathing) return;
+  const ph=PHASES[idx];
+  bLabel.textContent=ph.label;
+  circle.style.transitionDuration=ph.dur+'s';
+  circle.style.transform='scale('+ph.scale+')';
+  let left=ph.dur; bNum.textContent=left;
+  clearInterval(cId);
+  cId=setInterval(()=>{ left--; if(left>=0) bNum.textContent=left; },1000);
+  tId=setTimeout(()=>{
+    clearInterval(cId);
+    let next=idx+1;
+    if(next>=PHASES.length){ next=0; cycles++; bHint.textContent='Ciclos completos: '+cycles+' · continue no seu ritmo'; }
+    runPhase(next);
+  }, ph.dur*1000);
+}
+function startBreath(){
+  breathing=true; cycles=0; bBtn.textContent='Parar';
+  bHint.textContent='Siga o círculo. Respire pelo nariz, solte pela boca.';
+  runPhase(0);
+}
+function stopBreath(){
+  breathing=false; bBtn.textContent='Começar';
+  clearTimeout(tId); clearInterval(cId);
+  circle.style.transitionDuration='.6s'; circle.style.transform='scale(1)';
+  bNum.textContent=''; bLabel.textContent='Pronto quando você estiver';
+  bHint.textContent='3 ciclos já acalmam. Respire pelo nariz, solte pela boca.';
+}
+bBtn.addEventListener('click',()=> breathing? stopBreath() : startBreath());
+</script>
+</body>
+</html>
