@@ -1,5 +1,7 @@
 # Higiene do Sono — Reorganização Interativa
 
+> Status: implementado em 2026-08-07.
+
 Data: 2026-08-07
 
 ## Contexto
