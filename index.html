@@ -95,6 +95,14 @@
   .acc-body{padding:0 16px 16px}
   .acc-item:not(.open) .acc-body{display:none}
 
+  /* ===== TABPANEL ===== */
+  .tabpanel-nav{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+  .tabpanel-nav button{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface2);color:var(--muted);font-family:inherit;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .16s}
+  .tabpanel-nav button:hover{color:var(--text)}
+  .tabpanel-nav button.active{background:var(--pink);border-color:var(--pink);color:#fff}
+  .tabpanel{display:none}
+  .tabpanel.active{display:block}
+
   /* ===== TIMELINE ===== */
   .tl-item{display:grid;grid-template-columns:94px 1fr;gap:14px;align-items:start;padding:15px 0;border-bottom:1px solid var(--line)}
   .tl-item:last-child{border-bottom:none}
@@ -302,58 +310,76 @@
   <section id="pilares">
     <p class="eyebrow">Parte 4</p>
     <h2>Os pilares, explicados</h2>
-
-    <h3>1. Consistência de horário — o pilar nº 1</h3>
-    <p>O ajuste de maior impacto isolado. O corpo ama previsibilidade. Quando os horários variam muito, o relógio biológico fica confuso e o sono perde qualidade mesmo que a quantidade seja a mesma. <span class="b">Fixe o horário de acordar</span> e o de dormir se ajusta sozinho.</p>
-
-    <h3>2. Gestão da luz — seu maior aliado (e vilão)</h3>
-    <ul class="clean">
-      <li><span class="b">De manhã:</span> luz natural nos olhos ancora o ciclo e melhora foco e humor no dia.</li>
-      <li><span class="b">À noite:</span> menos luz artificial e menos luz azul de telas. A luz azul imita o meio-dia pro cérebro e trava a melatonina.</li>
-    </ul>
-
-    <h3>Como usar o modo de luz quente do celular</h3>
-    <p>Largar o celular 2h antes soa lindo na teoria e é difícil na prática. Então vamos pelo que dá pra fazer já: ativar o modo de luz quente. Todo celular atual tem — ele deixa a tela amarelada e reduz bastante a luz azul que atrapalha o sono.</p>
-    <p class="b" style="margin-bottom:6px">Como ativar (em qualquer aparelho):</p>
-    <p style="margin-bottom:8px">Vá em <span class="b">Configurações → Tela (ou Display) → Conforto visual / Bem-estar digital</span> e procure por um destes nomes:</p>
-    <ul class="clean">
-      <li>"Night Shift", "Modo Noite", "Filtro de Luz Azul", "Luz Noturna", "Conforto Visual" ou "Temperatura de Cor".</li>
-    </ul>
-    <div class="box green">
-      <div class="lab">Configuração ideal — faça uma vez e esquece</div>
-      <ul>
-        <li>Ative com agendamento automático: do pôr do sol ao nascer do sol</li>
-        <li>Deixe a intensidade no máximo — quanto mais amarelada, melhor</li>
-        <li>Combine com o modo escuro do celular</li>
-        <li>Abaixe também o brilho geral à noite</li>
-      </ul>
-    </div>
-    <p>Honestidade: o filtro reduz a luz azul, mas não elimina o estímulo mental das redes nem as notificações. Ele é uma camada de proteção, não um passe livre. O ideal continua sendo tela desligada 30 min antes de dormir.</p>
-    <div class="box blue">
-      <div class="lab">Outros recursos que você já tem no celular</div>
-      <ul>
-        <li>"Não perturbe" agendado: silencia notificações no horário de sono</li>
-        <li>Limite de uso por app: bloqueia redes depois de um horário</li>
-        <li>Tela em escala de cinza (em Acessibilidade): tira as cores e reduz a vontade de rolar o feed</li>
-      </ul>
+    <p class="lead">Seis frentes, cada uma independente das outras — não precisa ler em ordem. Toque na que quiser entender melhor:</p>
+    <div class="tabpanel-nav" id="pilaresNav">
+      <button class="active" data-panel="p-horario">Horário</button>
+      <button data-panel="p-luz">Luz</button>
+      <button data-panel="p-ambiente">Ambiente</button>
+      <button data-panel="p-cafeina">Cafeína</button>
+      <button data-panel="p-exercicio">Exercício</button>
+      <button data-panel="p-ritual">Ritual</button>
     </div>
 
-    <h3>3. Ambiente de sono</h3>
-    <ul class="clean">
-      <li><span class="b">Temperatura:</span> 18 a 22°C. O corpo esfria pra adormecer; quarto quente atrapalha.</li>
-      <li><span class="b">Escuridão:</span> cortina blackout ou máscara de dormir.</li>
-      <li><span class="b">Silêncio:</span> ruído branco ou ventilador ajudam a mascarar sons.</li>
-      <li><span class="b">Associação:</span> cama é pra dormir (e sexo). Trabalhar e ver série na cama confunde o cérebro.</li>
-    </ul>
+    <div class="tabpanel active" id="p-horario">
+      <h3>Consistência de horário — o pilar nº 1</h3>
+      <p>O ajuste de maior impacto isolado. O corpo ama previsibilidade: quando os horários variam muito, o relógio biológico fica confuso e o sono perde qualidade mesmo que a quantidade seja a mesma. <span class="b">Fixe o horário de acordar</span> e o de dormir se ajusta sozinho.</p>
+    </div>
 
-    <h3>4. Cafeína</h3>
-    <p>Meia-vida de 6 a 8 horas. Um café às 15h ainda age às 21h. Evite pelo menos 6h antes de dormir — inclui café, chá preto, mate, pré-treino e refrigerante.</p>
+    <div class="tabpanel" id="p-luz">
+      <h3>Gestão da luz — seu maior aliado (e vilão)</h3>
+      <ul class="clean">
+        <li><span class="b">De manhã:</span> luz natural nos olhos ancora o ciclo e melhora foco e humor no dia.</li>
+        <li><span class="b">À noite:</span> menos luz artificial e menos luz azul de telas — ela imita o meio-dia pro cérebro e trava a melatonina.</li>
+      </ul>
+      <p class="b" style="margin-bottom:6px">Como ativar o modo de luz quente do celular:</p>
+      <ul class="clean">
+        <li>Vá em <span class="b">Configurações → Tela → Conforto visual</span> e procure "Night Shift", "Modo Noite" ou "Filtro de Luz Azul"</li>
+        <li>Ative com agendamento automático, do pôr do sol ao nascer do sol, na intensidade máxima</li>
+        <li>Combine com o modo escuro do celular e abaixe o brilho geral à noite</li>
+      </ul>
+      <div class="box green">
+        <div class="lab">Configuração ideal — faça uma vez e esquece</div>
+        <ul>
+          <li>Agendamento automático do pôr ao nascer do sol</li>
+          <li>Intensidade no máximo — quanto mais amarelada, melhor</li>
+          <li>Modo escuro + brilho geral mais baixo à noite</li>
+        </ul>
+      </div>
+      <p>Honestidade: o filtro reduz a luz azul, mas não elimina o estímulo mental das redes nem as notificações. É uma camada de proteção, não um passe livre — o ideal continua sendo tela desligada 30 min antes de dormir.</p>
+      <div class="box blue">
+        <div class="lab">Outros recursos que você já tem no celular</div>
+        <ul>
+          <li>"Não perturbe" agendado: silencia notificações no horário de sono</li>
+          <li>Limite de uso por app: bloqueia redes depois de um horário</li>
+          <li>Tela em escala de cinza (em Acessibilidade): reduz a vontade de rolar o feed</li>
+        </ul>
+      </div>
+    </div>
 
-    <h3>5. Exercício</h3>
-    <p>Treinar melhora muito o sono. Só cuide do horário: treino intenso 1 a 2h antes de dormir eleva temperatura e cortisol. Prefira manhã ou início da tarde quando possível.</p>
+    <div class="tabpanel" id="p-ambiente">
+      <h3>Ambiente de sono</h3>
+      <ul class="clean">
+        <li><span class="b">Temperatura:</span> 18 a 22°C. O corpo esfria pra adormecer; quarto quente atrapalha.</li>
+        <li><span class="b">Escuridão:</span> cortina blackout ou máscara de dormir.</li>
+        <li><span class="b">Silêncio:</span> ruído branco ou ventilador ajudam a mascarar sons.</li>
+        <li><span class="b">Associação:</span> cama é pra dormir (e sexo). Trabalhar e ver série na cama confunde o cérebro.</li>
+      </ul>
+    </div>
 
-    <h3>6. Ritual de desaceleração</h3>
-    <p>O sistema nervoso não tem botão de desligar. Crie uma sequência curta e sempre igual: banho morno, leitura (não tela), respiração ou alongamento leve, anotar o que precisa fazer amanhã. A respiração <span class="b">4-7-8</span> logo ali embaixo é um bom começo.</p>
+    <div class="tabpanel" id="p-cafeina">
+      <h3>Cafeína</h3>
+      <p>Meia-vida de 6 a 8 horas — um café às 15h ainda age às 21h. Evite pelo menos 6h antes de dormir, incluindo café, chá preto, mate, pré-treino e refrigerante.</p>
+    </div>
+
+    <div class="tabpanel" id="p-exercicio">
+      <h3>Exercício</h3>
+      <p>Treinar melhora muito o sono. Só cuide do horário: treino intenso 1 a 2h antes de dormir eleva temperatura e cortisol. Prefira manhã ou início da tarde quando possível.</p>
+    </div>
+
+    <div class="tabpanel" id="p-ritual">
+      <h3>Ritual de desaceleração</h3>
+      <p>O sistema nervoso não tem botão de desligar. Crie uma sequência curta e sempre igual: banho morno, leitura (não tela), respiração ou alongamento leve, anotar o que precisa fazer amanhã. A respiração <span class="b">4-7-8</span> é um bom começo.</p>
+    </div>
   </section>
 
   <!-- REFERÊNCIA -->
@@ -554,6 +580,18 @@ document.querySelectorAll('.acc-item .acc-head').forEach(head=>{
     const open = item.classList.toggle('open');
     head.setAttribute('aria-expanded', open ? 'true' : 'false');
     head.querySelector('.plus').textContent = open ? '−' : '+';
+  });
+});
+
+/* ===== TABPANEL TOGGLE ===== */
+document.querySelectorAll('.tabpanel-nav').forEach(navEl=>{
+  navEl.querySelectorAll('button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      navEl.querySelectorAll('button').forEach(b=>b.classList.toggle('active', b===btn));
+      const targetId = btn.dataset.panel;
+      const panels = navEl.parentElement.querySelectorAll(':scope > .tabpanel');
+      panels.forEach(p=>p.classList.toggle('active', p.id===targetId));
+    });
   });
 });
 
