@@ -226,6 +226,7 @@
     <div class="result" id="result">
       <div class="score" id="resScore">0 de 8 marcados</div>
       <div class="msg" id="resMsg">Marque os sinais acima pra ver o resultado.</div>
+      <div id="resCta"></div>
     </div>
   </section>
 
@@ -599,11 +600,22 @@ function updateResult(){
   const n = checked.filter(Boolean).length;
   const score = document.getElementById('resScore');
   const msg = document.getElementById('resMsg');
+  const cta = document.getElementById('resCta');
   score.textContent = n+' de 8 marcados';
-  if(n===0){ msg.textContent = 'Marque os sinais acima pra ver o resultado.'; }
-  else if(n<=1){ msg.textContent = 'Seu sono provavelmente está te ajudando. Mantém o que você já faz.'; }
-  else if(n<=3){ msg.textContent = 'Sinal de alerta. Comece pelos 3 ajustes do topo do guia e acompanhe pelo tracker.'; }
-  else { msg.innerHTML = 'O sono é a sua prioridade agora — antes de qualquer ajuste de treino ou dieta. Me chama pra gente ver isso junto.'; }
+  let ctaHtml = '';
+  if(n===0){
+    msg.textContent = 'Marque os sinais acima pra ver o resultado.';
+  } else if(n<=1){
+    msg.textContent = 'Seu sono provavelmente está te ajudando. Mantém o que você já faz.';
+    ctaHtml = '<a href="#tracker" class="btn-pink" style="display:inline-block;margin-top:12px">Ver seu tracker</a>';
+  } else if(n<=3){
+    msg.textContent = 'Sinal de alerta. Comece pelos 3 ajustes do topo do guia e acompanhe pelo tracker.';
+    ctaHtml = '<a href="#comece" class="btn-pink" style="display:inline-block;margin-top:12px">Ver os 3 ajustes</a>';
+  } else {
+    msg.innerHTML = 'O sono é a sua prioridade agora — antes de qualquer ajuste de treino ou dieta. Me chama pra gente ver isso junto.';
+    ctaHtml = '<a href="#pilares" class="btn-pink" style="display:inline-block;margin-top:12px">Ver todos os pilares</a>';
+  }
+  cta.innerHTML = ctaHtml;
 }
 cl.querySelectorAll('.check-item').forEach(it=>{
   it.addEventListener('click',()=>{
