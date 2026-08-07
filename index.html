@@ -170,15 +170,15 @@
     <p class="tagline">O hábito que decide seus resultados enquanto você dorme.</p>
     <nav class="nav" id="nav">
       <a href="#comece">Comece aqui</a>
-      <a href="#porque">Por que importa</a>
+      <a href="#diagnostico">Seu sono</a>
+      <a href="#tracker">Tracker</a>
       <a href="#dia">Seu dia</a>
-      <a href="#ref">Referência</a>
+      <a href="#porque">Por que importa</a>
       <a href="#pilares">Os pilares</a>
+      <a href="#ref">Referência</a>
+      <a href="#respiracao">Respiração</a>
       <a href="#filhos">Filhos pequenos</a>
       <a href="#tempo">Sem tempo</a>
-      <a href="#tracker">Tracker</a>
-      <a href="#diagnostico">Seu sono</a>
-      <a href="#respiracao">Respiração</a>
       <a href="#resumo">Resumo</a>
     </nav>
   </div>
@@ -202,6 +202,57 @@
     <p>O resto aprofunda o porquê, mostra a rotina ideal do dia inteiro e tem ferramentas pra você acompanhar. Mas se hoje você só levar esses três, já saiu no lucro.</p>
   </section>
 
+  <!-- DIAGNÓSTICO -->
+  <section id="diagnostico">
+    <p class="eyebrow">Parte 8 · interativo</p>
+    <h2>Como está o seu sono?</h2>
+    <p>Marque quantos desses sinais você reconhece em você nas últimas semanas. É um raio-x rápido e honesto:</p>
+    <div id="checklist"></div>
+    <div class="result" id="result">
+      <div class="score" id="resScore">0 de 8 marcados</div>
+      <div class="msg" id="resMsg">Marque os sinais acima pra ver o resultado.</div>
+    </div>
+  </section>
+
+  <!-- TRACKER -->
+  <section id="tracker">
+    <p class="eyebrow">Parte 7 · interativo</p>
+    <h2>Seu tracker de 7 dias</h2>
+    <p>Aqui a teoria vira hábito. Toque nos dias que você cumprir cada hábito — <span class="b">o app salva no seu aparelho</span>, então pode fechar e voltar depois. Não tente todos de uma vez: comece com 3 ou 4 e vá somando.</p>
+    <div class="card">
+      <div class="tracker-wrap"><div class="tracker" id="trackerGrid"></div></div>
+      <div class="tk-actions">
+        <span class="tk-count" id="tkCount"></span>
+        <button class="btn-ghost" id="tkReset">Zerar semana</button>
+      </div>
+    </div>
+    <div class="box green">
+      <div class="lab">Como ler no fim da semana</div>
+      <ul>
+        <li>5 a 7 marcações num hábito: já virou rotina, mantém</li>
+        <li>2 a 4: está no caminho, foca nele na próxima semana</li>
+        <li>0 a 1: identifica o que travou e ajusta a meta pra algo mais fácil</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SEU DIA -->
+  <section id="dia">
+    <p class="eyebrow">Parte 2</p>
+    <h2>O seu dia para dormir bem</h2>
+    <p>Dormir bem começa quando você acorda, não quando você deita. Essa é a rotina ideal do dia inteiro — use como mapa e vá encaixando o que der.</p>
+    <div class="card" style="padding:6px 20px">
+      <div class="tl-item"><div class="tl-phase">AO ACORDAR</div><div class="tl-body"><h4>Luz natural nos olhos</h4><p>Abra a cortina ou tome o café perto da janela por 10 minutos. Isso liga o seu relógio biológico.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">MANHÃ</div><div class="tl-body"><h4>Movimento e mais luz</h4><p>Se puder treinar de manhã ou início da tarde, melhor. Quanto mais luz natural no dia, mais forte o sinal de sono à noite.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">ATÉ 14H</div><div class="tl-body"><h4>Último café</h4><p>Depois disso, só descafeinado ou chás sem cafeína. A cafeína fica ativa por 6 a 8 horas.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">FIM DE TARDE</div><div class="tl-body"><h4>Cuidado com treino muito tarde</h4><p>Treino intenso eleva temperatura e cortisol. Se treinar à noite, termine pelo menos 1 a 2 horas antes de deitar.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">2H ANTES</div><div class="tl-body"><h4>Última refeição pesada</h4><p>Digestão pesada atrapalha o sono profundo. Depois disso, só algo leve se precisar.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">1H ANTES</div><div class="tl-body"><h4>Diminua as luzes</h4><p>Abaixe a iluminação da casa e ative o modo de luz quente no celular. Comece a desacelerar.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">30 MIN ANTES</div><div class="tl-body"><h4>Telas desligadas</h4><p>Guarde o celular, de preferência fora do quarto. Banho morno, leitura, respiração — escolha o seu ritual.</p></div></div>
+      <div class="tl-item"><div class="tl-phase">NA CAMA</div><div class="tl-body"><h4>Só para dormir</h4><p>Quarto escuro, fresco (18-22°C) e silencioso. Se o sono não vier, tente a respiração 4-7-8.</p></div></div>
+    </div>
+  </section>
+
   <!-- POR QUE -->
   <section id="porque">
     <p class="eyebrow">Parte 1</p>
@@ -222,66 +273,6 @@
     <div class="stat"><div class="n">7-9h</div><div class="d">é a faixa recomendada pra adultos. Isso não é negociável biologicamente.</div></div>
     <h3>Dormir mal engorda. E não é falta de disciplina.</h3>
     <p>A privação de sono mexe com dois hormônios da fome: <span class="b">a leptina cai</span> (some o sinal de saciedade) e <span class="b">a grelina sobe</span> (a fome aumenta, principalmente por doce e coisa gordurosa). Somado ao cortisol alto, o corpo estoca mais gordura. Se o emagrecimento travou e o sono está ruim, o problema pode não ser sua força de vontade. É bioquímica — e dá pra resolver.</p>
-  </section>
-
-  <!-- SEU DIA -->
-  <section id="dia">
-    <p class="eyebrow">Parte 2</p>
-    <h2>O seu dia para dormir bem</h2>
-    <p>Dormir bem começa quando você acorda, não quando você deita. Essa é a rotina ideal do dia inteiro — use como mapa e vá encaixando o que der.</p>
-    <div class="card" style="padding:6px 20px">
-      <div class="tl-item"><div class="tl-phase">AO ACORDAR</div><div class="tl-body"><h4>Luz natural nos olhos</h4><p>Abra a cortina ou tome o café perto da janela por 10 minutos. Isso liga o seu relógio biológico.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">MANHÃ</div><div class="tl-body"><h4>Movimento e mais luz</h4><p>Se puder treinar de manhã ou início da tarde, melhor. Quanto mais luz natural no dia, mais forte o sinal de sono à noite.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">ATÉ 14H</div><div class="tl-body"><h4>Último café</h4><p>Depois disso, só descafeinado ou chás sem cafeína. A cafeína fica ativa por 6 a 8 horas.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">FIM DE TARDE</div><div class="tl-body"><h4>Cuidado com treino muito tarde</h4><p>Treino intenso eleva temperatura e cortisol. Se treinar à noite, termine pelo menos 1 a 2 horas antes de deitar.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">2H ANTES</div><div class="tl-body"><h4>Última refeição pesada</h4><p>Digestão pesada atrapalha o sono profundo. Depois disso, só algo leve se precisar.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">1H ANTES</div><div class="tl-body"><h4>Diminua as luzes</h4><p>Abaixe a iluminação da casa e ative o modo de luz quente no celular. Comece a desacelerar.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">30 MIN ANTES</div><div class="tl-body"><h4>Telas desligadas</h4><p>Guarde o celular, de preferência fora do quarto. Banho morno, leitura, respiração — escolha o seu ritual.</p></div></div>
-      <div class="tl-item"><div class="tl-phase">NA CAMA</div><div class="tl-body"><h4>Só para dormir</h4><p>Quarto escuro, fresco (18-22°C) e silencioso. Se o sono não vier, tente a respiração 4-7-8.</p></div></div>
-    </div>
-  </section>
-
-  <!-- REFERÊNCIA -->
-  <section id="ref">
-    <p class="eyebrow">Parte 3</p>
-    <h2>Referência rápida</h2>
-    <h3>Quando parar cada coisa antes de dormir</h3>
-    <table class="tbl">
-      <thead><tr><th>O quê</th><th>Parar até</th><th>Por quê</th></tr></thead>
-      <tbody>
-        <tr><td>Cafeína</td><td>6 a 8h antes</td><td>Fica ativa por horas e reduz o sono profundo</td></tr>
-        <tr><td>Treino intenso</td><td>1 a 2h antes</td><td>Eleva temperatura corporal e cortisol</td></tr>
-        <tr><td>Refeição pesada</td><td>2 a 3h antes</td><td>Digestão atrapalha o sono profundo</td></tr>
-        <tr><td>Álcool</td><td>3 a 4h antes</td><td>Ajuda a apagar, mas fragmenta o sono</td></tr>
-        <tr><td>Telas / luz azul</td><td>30 a 60 min antes</td><td>Suprime a melatonina, o hormônio do sono</td></tr>
-        <tr><td>Luz forte em casa</td><td>1h antes</td><td>Atrasa o relógio biológico</td></tr>
-      </tbody>
-    </table>
-    <h3>O resumo em duas colunas</h3>
-    <div class="da">
-      <div class="col do">
-        <h4>FAÇA ISSO</h4>
-        <ul>
-          <li>Acordar no mesmo horário todo dia</li>
-          <li>Pegar luz natural pela manhã</li>
-          <li>Quarto escuro, fresco e silencioso</li>
-          <li>Modo de luz quente no celular à noite</li>
-          <li>Ter um ritual de desaceleração</li>
-          <li>Usar a cama só para dormir</li>
-        </ul>
-      </div>
-      <div class="col no">
-        <h4>EVITE ISSO</h4>
-        <ul>
-          <li>Variar muito o horário de dormir</li>
-          <li>Tomar café à tarde/noite</li>
-          <li>Treino intenso perto de deitar</li>
-          <li>Levar telas para a cama</li>
-          <li>Cochilar depois das 15h</li>
-          <li>Olhar o relógio de madrugada</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <!-- PILARES -->
@@ -342,6 +333,64 @@
     <p>O sistema nervoso não tem botão de desligar. Crie uma sequência curta e sempre igual: banho morno, leitura (não tela), respiração ou alongamento leve, anotar o que precisa fazer amanhã. A respiração <span class="b">4-7-8</span> logo ali embaixo é um bom começo.</p>
   </section>
 
+  <!-- REFERÊNCIA -->
+  <section id="ref">
+    <p class="eyebrow">Parte 3</p>
+    <h2>Referência rápida</h2>
+    <h3>Quando parar cada coisa antes de dormir</h3>
+    <table class="tbl">
+      <thead><tr><th>O quê</th><th>Parar até</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td>Cafeína</td><td>6 a 8h antes</td><td>Fica ativa por horas e reduz o sono profundo</td></tr>
+        <tr><td>Treino intenso</td><td>1 a 2h antes</td><td>Eleva temperatura corporal e cortisol</td></tr>
+        <tr><td>Refeição pesada</td><td>2 a 3h antes</td><td>Digestão atrapalha o sono profundo</td></tr>
+        <tr><td>Álcool</td><td>3 a 4h antes</td><td>Ajuda a apagar, mas fragmenta o sono</td></tr>
+        <tr><td>Telas / luz azul</td><td>30 a 60 min antes</td><td>Suprime a melatonina, o hormônio do sono</td></tr>
+        <tr><td>Luz forte em casa</td><td>1h antes</td><td>Atrasa o relógio biológico</td></tr>
+      </tbody>
+    </table>
+    <h3>O resumo em duas colunas</h3>
+    <div class="da">
+      <div class="col do">
+        <h4>FAÇA ISSO</h4>
+        <ul>
+          <li>Acordar no mesmo horário todo dia</li>
+          <li>Pegar luz natural pela manhã</li>
+          <li>Quarto escuro, fresco e silencioso</li>
+          <li>Modo de luz quente no celular à noite</li>
+          <li>Ter um ritual de desaceleração</li>
+          <li>Usar a cama só para dormir</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h4>EVITE ISSO</h4>
+        <ul>
+          <li>Variar muito o horário de dormir</li>
+          <li>Tomar café à tarde/noite</li>
+          <li>Treino intenso perto de deitar</li>
+          <li>Levar telas para a cama</li>
+          <li>Cochilar depois das 15h</li>
+          <li>Olhar o relógio de madrugada</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESPIRAÇÃO -->
+  <section id="respiracao">
+    <p class="eyebrow">Ferramenta · respiração</p>
+    <h2>Respiração 4-7-8 pra dormir</h2>
+    <p>Quando o sono não vem, essa técnica desacelera o sistema nervoso e ajuda a pegar no sono. Inspire por 4, segure por 7, expire por 8. Siga o círculo:</p>
+    <div class="card">
+      <div class="breath">
+        <div class="breath-stage"><div class="breath-circle" id="bCircle"><span class="breath-num" id="bNum"></span></div></div>
+        <div class="breath-label" id="bLabel">Pronto quando você estiver</div>
+        <div class="breath-hint" id="bHint">3 ciclos já acalmam. Respire pelo nariz, solte pela boca.</div>
+        <button class="btn-pink" id="bBtn">Começar</button>
+      </div>
+    </div>
+  </section>
+
   <!-- FILHOS -->
   <section id="filhos">
     <p class="eyebrow">Parte 5</p>
@@ -387,55 +436,6 @@
       </ol>
     </div>
     <p>Tratar o sono como parte do seu protocolo de performance muda tudo. Você não performa apesar do descanso — você performa por causa dele.</p>
-  </section>
-
-  <!-- TRACKER -->
-  <section id="tracker">
-    <p class="eyebrow">Parte 7 · interativo</p>
-    <h2>Seu tracker de 7 dias</h2>
-    <p>Aqui a teoria vira hábito. Toque nos dias que você cumprir cada hábito — <span class="b">o app salva no seu aparelho</span>, então pode fechar e voltar depois. Não tente todos de uma vez: comece com 3 ou 4 e vá somando.</p>
-    <div class="card">
-      <div class="tracker-wrap"><div class="tracker" id="trackerGrid"></div></div>
-      <div class="tk-actions">
-        <span class="tk-count" id="tkCount"></span>
-        <button class="btn-ghost" id="tkReset">Zerar semana</button>
-      </div>
-    </div>
-    <div class="box green">
-      <div class="lab">Como ler no fim da semana</div>
-      <ul>
-        <li>5 a 7 marcações num hábito: já virou rotina, mantém</li>
-        <li>2 a 4: está no caminho, foca nele na próxima semana</li>
-        <li>0 a 1: identifica o que travou e ajusta a meta pra algo mais fácil</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- DIAGNÓSTICO -->
-  <section id="diagnostico">
-    <p class="eyebrow">Parte 8 · interativo</p>
-    <h2>Como está o seu sono?</h2>
-    <p>Marque quantos desses sinais você reconhece em você nas últimas semanas. É um raio-x rápido e honesto:</p>
-    <div id="checklist"></div>
-    <div class="result" id="result">
-      <div class="score" id="resScore">0 de 8 marcados</div>
-      <div class="msg" id="resMsg">Marque os sinais acima pra ver o resultado.</div>
-    </div>
-  </section>
-
-  <!-- RESPIRAÇÃO -->
-  <section id="respiracao">
-    <p class="eyebrow">Ferramenta · respiração</p>
-    <h2>Respiração 4-7-8 pra dormir</h2>
-    <p>Quando o sono não vem, essa técnica desacelera o sistema nervoso e ajuda a pegar no sono. Inspire por 4, segure por 7, expire por 8. Siga o círculo:</p>
-    <div class="card">
-      <div class="breath">
-        <div class="breath-stage"><div class="breath-circle" id="bCircle"><span class="breath-num" id="bNum"></span></div></div>
-        <div class="breath-label" id="bLabel">Pronto quando você estiver</div>
-        <div class="breath-hint" id="bHint">3 ciclos já acalmam. Respire pelo nariz, solte pela boca.</div>
-        <button class="btn-pink" id="bBtn">Começar</button>
-      </div>
-    </div>
   </section>
 
   <!-- RESUMO -->
