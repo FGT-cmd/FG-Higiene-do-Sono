@@ -86,6 +86,15 @@
   .tri .k{font-weight:800;color:var(--pink);font-size:.9rem;min-width:78px}
   .tri .v{font-size:.88rem;color:#dcdcdc}
 
+  /* ===== ACCORDION ===== */
+  .acc{margin:6px 0 4px}
+  .acc-item{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;overflow:hidden;background:var(--surface2)}
+  .acc-head{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:10px}
+  .acc-head b{font-size:.92rem;font-weight:700;color:var(--text)}
+  .acc-head .plus{color:var(--pink);font-size:1.1rem;font-weight:800;flex:0 0 auto}
+  .acc-body{padding:0 16px 16px}
+  .acc-item:not(.open) .acc-body{display:none}
+
   /* ===== TIMELINE ===== */
   .tl-item{display:grid;grid-template-columns:94px 1fr;gap:14px;align-items:start;padding:15px 0;border-bottom:1px solid var(--line)}
   .tl-item:last-child{border-bottom:none}
@@ -257,22 +266,36 @@
   <section id="porque">
     <p class="eyebrow">Parte 1</p>
     <h2>Por que o sono decide seus resultados</h2>
-    <p>Vou ser direto: se o seu sono está ruim, você treina com o freio de mão puxado. Não importa o quão perfeito estejam o treino e a dieta.</p>
-    <h3>O triângulo que você não pode quebrar</h3>
-    <p>Seus resultados dependem de três coisas trabalhando juntas. Tira uma, as outras duas param de funcionar direito:</p>
-    <div class="tri">
-      <div class="row"><span class="k">Treino</span><span class="v">gera o estímulo e as microlesões que pedem adaptação</span></div>
-      <div class="row"><span class="k">Nutrição</span><span class="v">fornece o material pra reconstruir</span></div>
-      <div class="row"><span class="k">Sono</span><span class="v">é o momento em que a reconstrução realmente acontece</span></div>
+    <p class="lead">Vou ser direto: se o seu sono está ruim, você treina com o freio de mão puxado — não importa o quão perfeito estejam o treino e a dieta. Toque em cada card pra entender o porquê:</p>
+    <div class="acc" id="accPorque">
+      <div class="acc-item open">
+        <div class="acc-head" role="button" aria-expanded="true"><b>🔺 O triângulo que você não pode quebrar</b><span class="plus">−</span></div>
+        <div class="acc-body">
+          <p>Seus resultados dependem de três coisas trabalhando juntas. Tire uma, as outras duas param de funcionar direito:</p>
+          <div class="tri">
+            <div class="row"><span class="k">Treino</span><span class="v">gera o estímulo e as microlesões que pedem adaptação</span></div>
+            <div class="row"><span class="k">Nutrição</span><span class="v">fornece o material pra reconstruir</span></div>
+            <div class="row"><span class="k">Sono</span><span class="v">é o momento em que a reconstrução realmente acontece</span></div>
+          </div>
+          <p>A síntese proteica — que faz o músculo crescer — acontece principalmente no sono profundo, quando o hormônio do crescimento tem seu pico. Sem sono, o estímulo existe, mas a resposta não vem completa.</p>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" role="button" aria-expanded="false"><b>📊 Os números que provam isso</b><span class="plus">+</span></div>
+        <div class="acc-body">
+          <div class="stat"><div class="n">18%</div><div class="d">de queda na síntese proteica muscular após uma única noite mal dormida.</div></div>
+          <div class="stat"><div class="n">24%</div><div class="d">de redução na testosterona — hormônio-chave de composição corporal pra homens e mulheres.</div></div>
+          <div class="stat"><div class="n">21%</div><div class="d">de aumento no cortisol, que acelera a perda de massa magra e o acúmulo de gordura abdominal.</div></div>
+          <div class="stat"><div class="n">7-9h</div><div class="d">é a faixa recomendada pra adultos. Isso não é negociável biologicamente.</div></div>
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head" role="button" aria-expanded="false"><b>🍩 Por que dormir mal engorda</b><span class="plus">+</span></div>
+        <div class="acc-body">
+          <p>Não é falta de disciplina. A privação de sono mexe com dois hormônios da fome: <span class="b">a leptina cai</span> (some o sinal de saciedade) e <span class="b">a grelina sobe</span> (a fome aumenta, principalmente por doce e coisa gordurosa). Somado ao cortisol alto, o corpo estoca mais gordura. Se o emagrecimento travou e o sono está ruim, o problema pode não ser sua força de vontade — é bioquímica, e dá pra resolver.</p>
+        </div>
+      </div>
     </div>
-    <p>A síntese proteica — que faz o músculo crescer — acontece principalmente no sono profundo, quando o hormônio do crescimento tem seu pico. Sem sono, o estímulo existe, mas a resposta não vem completa.</p>
-    <h3>Os números que provam isso</h3>
-    <div class="stat"><div class="n">18%</div><div class="d">de queda na síntese proteica muscular após uma única noite mal dormida.</div></div>
-    <div class="stat"><div class="n">24%</div><div class="d">de redução na testosterona — hormônio-chave de composição corporal pra homens e mulheres.</div></div>
-    <div class="stat"><div class="n">21%</div><div class="d">de aumento no cortisol, que acelera a perda de massa magra e o acúmulo de gordura abdominal.</div></div>
-    <div class="stat"><div class="n">7-9h</div><div class="d">é a faixa recomendada pra adultos. Isso não é negociável biologicamente.</div></div>
-    <h3>Dormir mal engorda. E não é falta de disciplina.</h3>
-    <p>A privação de sono mexe com dois hormônios da fome: <span class="b">a leptina cai</span> (some o sinal de saciedade) e <span class="b">a grelina sobe</span> (a fome aumenta, principalmente por doce e coisa gordurosa). Somado ao cortisol alto, o corpo estoca mais gordura. Se o emagrecimento travou e o sono está ruim, o problema pode não ser sua força de vontade. É bioquímica — e dá pra resolver.</p>
   </section>
 
   <!-- PILARES -->
@@ -523,6 +546,16 @@ document.getElementById('tkReset').addEventListener('click',()=>{
   tkState={}; tkSave(); renderTracker();
 });
 renderTracker();
+
+/* ===== ACCORDION TOGGLE ===== */
+document.querySelectorAll('.acc-item .acc-head').forEach(head=>{
+  head.addEventListener('click',()=>{
+    const item = head.closest('.acc-item');
+    const open = item.classList.toggle('open');
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    head.querySelector('.plus').textContent = open ? '−' : '+';
+  });
+});
 
 /* ===== AUTODIAGNÓSTICO ===== */
 const SIGNS = [
